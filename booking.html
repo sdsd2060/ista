@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="nav_booking">Book & Pay - istanova Summer Camp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body id="booking-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="istanova Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+                    <li><a href="booking.html" data-lang-key="nav_booking">Book & Pay</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <span class="current-lang"><span class="current-lang-text">EN</span> <i class="fas fa-caret-down"></i></span>
+                <div class="lang-options">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="ar">العربية</a>
+                    <a href="#" data-lang="tr">Türkçe</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section container">
+            <div class="booking-form-container">
+                <h2 data-lang-key="booking_form_heading">Booking and Payment Form</h2>
+                <p style="text-align: center; margin-bottom: 30px;" data-lang-key="booking_form_intro">Fill out the form below to confirm your booking. Please ensure the accuracy of the data.</p>
+                
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="num-participants" data-lang-key="booking_num_participants">Number of Participants:</label>
+                        <select id="num-participants" name="num_participants" required>
+                            <option value="0" data-lang-key="booking_num_participants_placeholder">Select number of participants</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="relationship-field" style="display: none;">
+                        <label for="relationship" data-lang-key="booking_relationship">Relationship:</label>
+                        <select id="relationship" name="relationship">
+                            <option value="" data-lang-key="choose_relation_placeholder">Select relationship</option>
+                            <option value="couple" data-lang-key="booking_relationship_couple">Couple</option>
+                            <option value="friends" data-lang-key="booking_relationship_friends">Friends</option>
+                        </select>
+                    </div>
+
+                    <div id="participant-fields-container">
+                        <!-- Participant fields will be dynamically added here by JavaScript -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-lang-key="booking_email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone-number" data-lang-key="booking_phone_number">Phone Number</label>
+                        <div style="display: flex; gap: 10px;">
+                            <select id="phone-code" name="phone_code" style="flex: 0 0 120px;" required></select>
+                            <input type="tel" id="phone-number" name="phone_number" placeholder="e.g., 5551234567" required>
+                        </div>
+                    </div>
+
+                    <div class="price-summary">
+                        <p><span data-lang-key="booking_price_per_person">Price per person:</span> <strong><span id="price-per-person">0.00 $</span></strong></p>
+                        <p><span data-lang-key="booking_discount">Discount:</span> <strong><span id="discount">0.00 $ (0%)</span></strong></p>
+                        <p><span data-lang-key="booking_total_price">Total Price:</span> <strong><span id="total-price">0.00 $</span></strong></p>
+                        <p class="final-price"><span data-lang-key="booking_final_price">Final Amount to Pay:</span> <strong><span id="final-price">0.00 $</span></strong></p>
+                    </div>
+
+                    <div id="payment-methods-container">
+                        <!-- Payment methods will be dynamically added here -->
+                    </div>
+                    
+                    <div id="payment-details" class="payment-details">
+                        <!-- Payment details will be displayed here based on selection -->
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 30px;">
+                        <label>
+                            <input type="checkbox" id="terms-agree" name="terms_agree" required>
+                            <span data-lang-key="booking_terms_checkbox_text">I agree to the</span> <a href="#" id="terms-link" data-lang-key="booking_terms_link">Terms and Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" data-lang-key="booking_submit_btn">Confirm Booking</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="terms-popup-overlay" id="terms-popup-overlay">
+        <div class="terms-popup-content" id="terms-popup-content">
+            <h3 data-lang-key="terms_and_conditions_heading">Terms and Conditions</h3>
+            <p data-lang-key="terms_and_conditions_intro">Please read the following terms and conditions carefully before completing your booking. Your booking implies your agreement to these terms:</p>
+            
+            <h4 data-lang-key="term_1_title">Age Group</h4>
+            <p data-lang-key="term_1_text">The camp is exclusively for individuals aged 18 to 45 years. No bookings outside this age range will be accepted. In case of booking for a non-compliant age, the booking will be cancelled without refund.</p>
+            
+            <h4 data-lang-key="term_2_title">Booking and Payment Policy</h4>
+            <p data-lang-key="term_2_text">Full payment is required to confirm your booking. Available payment options will be detailed on the booking page.</p>
+
+            <h4 data-lang-key="term_3_title">Cancellation Policy</h4>
+            <p data-lang-key="term_3_text">If cancelled 30 days before the trip date, 70% of the amount paid will be refunded. If cancelled 15 days before, 50% of the amount paid will be refunded. No refund will be issued if cancelled less than 15 days before the trip date.</p>
+
+            <h4 data-lang-key="term_4_title">Responsibility</h4>
+            <p data-lang-key="term_4_text">istanova company is not responsible for any lost or damaged personal belongings. All activities are at the participant's personal risk, with our commitment to taking all necessary safety measures.</p>
+
+            <h4 data-lang-key="term_5_title">Conduct</h4>
+            <p data-lang-key="term_5_text">All participants must adhere to camp rules and general conduct. Camp management reserves the right to expel any participant who violates these rules without refund.</p>
+
+            <h4 data-lang-key="term_6_title">Photography</h4>
+            <p data-lang-key="term_6_text">By agreeing to these terms, the participant agrees to the use of photos and videos taken during the camp for promotional purposes of the company.</p>
+
+            <h4 data-lang-key="term_7_title">Special Needs</h4>
+            <p data-lang-key="term_7_text">Please inform us in advance of any special needs or food allergies so we can make the necessary arrangements.</p>
+
+            <h4 data-lang-key="term_8_title">Program Changes</h4>
+            <p data-lang-key="term_8_text">Camp management reserves the right to modify the activity program or schedule in case of circumstances beyond our control (such as bad weather) to ensure the safety and comfort of participants.</p>
+
+            <div class="form-group" style="margin-top: 25px; text-align: center;">
+                <label>
+                    <input type="checkbox" id="terms-read-checkbox">
+                    <span data-lang-key="booking_terms_checkbox_text">I have read and agree to the</span> <span data-lang-key="booking_terms_link">Terms and Conditions</span>
+                </label>
+                <p style="font-size: 0.9em; color: #dc3545; margin-top: 5px;" data-lang-key="booking_terms_confirm_message">(You must read and agree to the terms and conditions carefully to proceed.)</p>
+            </div>
+
+            <div class="terms-popup-actions">
+                <button type="button" class="btn" id="terms-agree-button" data-lang-key="term_agree">I Agree</button>
+                <button type="button" class="btn secondary" id="terms-disagree-button" data-lang-key="terms_disagree">Disagree</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>istanova</h4>
+                    <p data-lang-key="footer_address">Address: Istanbul, Fatih, Opposite Yusufpaşa Tramway, No. 42, Office No. 8</p>
+                    <p data-lang-key="footer_phone">Phone: +905457307235</p>
+                    <p data-lang-key="footer_email">Email: unitedhr8@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4><span data-lang-key="nav_home">Home</span></h4>
+                    <ul>
+                        <li><a href="index.html#about" data-lang-key="home_about_us_heading">About Us</a></li>
+                        <li><a href="index.html#activities" data-lang-key="home_activities_heading">Activities</a></li>
+                        <li><a href="index.html#schedule" data-lang-key="home_schedule_heading">Schedule</a></li>
+                        <li><a href="index.html#price" data-lang-key="home_price_heading">Price</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><span data-lang-key="nav_booking">Booking</span></h4>
+                    <ul>
+                        <li><a href="booking.html" data-lang-key="nav_booking">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy-right" data-lang-key="footer_company">
+                © 2025 istanova. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/905457307235" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="js/languages.js"></script>
+    <script src="data/countries.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Include PayPal SDK for dynamic buttons (requires client-id).
+         Note: Full dynamic payment processing typically involves server-side logic for createOrder and onApprove. -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AZtIgYRPcuH2KEI_ODxHzK6xEhXi1Hz1DzVXKGhdg0oVvHeS-C0TCJPPs5TOJXTdo5zfOv-ZcEQdHPhI&currency=USD"></script>
+</body>
+</html>

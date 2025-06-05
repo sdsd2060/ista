@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="nav_contact">Contact Us - istanova Summer Camp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="istanova Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+                    <li><a href="booking.html" data-lang-key="nav_booking">Book & Pay</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <span class="current-lang"><span class="current-lang-text">EN</span> <i class="fas fa-caret-down"></i></span>
+                <div class="lang-options">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="ar">العربية</a>
+                    <a href="#" data-lang="tr">Türkçe</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section container">
+            <h2 class="section-heading" data-lang-key="contact_heading">Contact Us</h2>
+            <p data-lang-key="contact_text">We are happy to answer all your inquiries. You can contact us through the following methods:</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4><span data-lang-key="footer_address">Address</span></h4>
+                    <p data-lang-key="footer_address">Istanbul, Fatih, Opposite Yusufpaşa Tramway, No. 42, Office No. 8</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4><span data-lang-key="footer_phone">Phone</span></h4>
+                    <p>+905457307235</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4><span data-lang-key="footer_email">Email</span></h4>
+                    <p>unitedhr8@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h3 data-lang-key="contact_form_heading">Or Send Us a Message</h3>
+                <form action="mailto:unitedhr8@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="contact-name" data-lang-key="contact_name">Your Full Name</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" data-lang-key="contact_email">Your Email</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" data-lang-key="contact_message">Your Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" data-lang-key="contact_send">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>istanova</h4>
+                    <p data-lang-key="footer_address">Address: Istanbul, Fatih, Opposite Yusufpaşa Tramway, No. 42, Office No. 8</p>
+                    <p data-lang-key="footer_phone">Phone: +905457307235</p>
+                    <p data-lang-key="footer_email">Email: unitedhr8@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4><span data-lang-key="nav_home">Home</span></h4>
+                    <ul>
+                        <li><a href="index.html#about" data-lang-key="home_about_us_heading">About Us</a></li>
+                        <li><a href="index.html#activities" data-lang-key="home_activities_heading">Activities</a></li>
+                        <li><a href="index.html#schedule" data-lang-key="home_schedule_heading">Schedule</a></li>
+                        <li><a href="index.html#price" data-lang-key="home_price_heading">Price</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><span data-lang-key="nav_booking">Booking</span></h4>
+                    <ul>
+                        <li><a href="booking.html" data-lang-key="nav_booking">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy-right" data-lang-key="footer_company">
+                © 2025 istanova. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/905457307235" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="js/languages.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
